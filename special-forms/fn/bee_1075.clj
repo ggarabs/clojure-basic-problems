@@ -2,6 +2,6 @@
 
 (defn -main [& _]
   (let [n (Integer/parseInt (read-line))]
-    (run! println (filter #(= 2 (mod % n)) (range 1 10001)))))
+    (run! println (filter (fn [x] (= 2 (mod x n))) (range 1 10001)))))
 
 (-main)

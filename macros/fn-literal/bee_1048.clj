@@ -1,4 +1,4 @@
-(ns fn.bee-1048
+(ns fn-literal.bee-1048
   (:gen-class))
 
 (def table {
@@ -9,7 +9,7 @@
             0 15 })
 
 (defn find-percentage [x]
-    (/ (some (fn [y] (when (> x (first y)) (second y))) table) 100.0))
+    (/ (some #(when (> x (first %)) (second %)) table) 100.0))
 
 (defn -main [& _]
   (let [salary (Double/parseDouble (read-line))

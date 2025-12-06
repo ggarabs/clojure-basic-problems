@@ -1,9 +1,9 @@
-(ns fn.bee-1072)
+(ns fn-literal.bee-1072)
 
 (defn -main [& _]
   (let [n (Integer/parseInt (read-line))
         values (take n (repeatedly #(Integer/parseInt (read-line))))
-        in (count (filter (fn [x] (<= 10 x 20)) values))
+        in (count (filter #(<= 10 % 20) values))
         out (- n in)] 
     (println in "in")
     (println out "out")))
